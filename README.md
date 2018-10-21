@@ -1,4 +1,4 @@
-## you have to install dependencies
+## install dependencies
 
 npm install
 
