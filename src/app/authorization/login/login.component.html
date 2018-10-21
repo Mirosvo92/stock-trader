@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="comeIn()" class="auth-form">
+  <!-- mail -->
+  <div class="">
+    <div>mail</div>
+    <input type="text"
+           class="form-input"
+           [ngClass]="{'error': form.get('email').invalid && form.get('email').touched}"
+           formControlName="email"/>
+  </div>
+  <!-- password -->
+  <div class="">
+    <div>password (at least 6 characters )</div>
+    <input type="password"
+           class="form-input"
+           [ngClass]="{'error': form.get('password').invalid && form.get('password').touched}"
+           formControlName="password"/>
+  </div>
+  <button [disabled]="form.invalid" class="auth-button" >come in</button>
+  <!-- reg -->
+  <div class="">
+    <a class="auth-link" [routerLink]="['registration']">I do not have an account</a>
+  </div>
+</form>
+<!-- error -->
+<div>
+  <p class="error-text">{{ errorText }}</p>
+</div>

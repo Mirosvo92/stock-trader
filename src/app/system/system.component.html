@@ -1,0 +1,13 @@
+<header class="header">
+ <nav class="navigation">
+   <a class="navigation__link" routerLinkActive="navigation__link--active" [routerLink]="['markets']">markets</a>
+   <a class="navigation__link" routerLinkActive="navigation__link--active"  [routerLink]="['portfolio']">portfolio</a>
+ </nav>
+  <div class="user">
+    <button class="user__exit" (click)="logout()">logout</button>
+    <div class="user__balance">Balance: {{ userData?.balance }}</div>
+  </div>
+</header>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

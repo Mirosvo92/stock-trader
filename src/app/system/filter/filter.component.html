@@ -1,0 +1,8 @@
+<form class="filter" [formGroup]="categoryGroup">
+  <div class="" >
+    <div class="filter__block" formArrayName="categoryArray"  *ngFor="let category of listCategory; let i = index">
+      <input formControlName="{{i}}" type="checkbox" [id]="i" (change)="chooseFilter($event)" />
+      <label class="filter__label" [for]="i">{{ category }}</label>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,13 @@
+<app-filter [stocks]="stocks" (updateList)="updateStocks($event)" ></app-filter>
+<div class="markets">
+  <div class="stocks" *ngFor="let st of stocks">
+    <div class="stocks__name">{{ st?.name }}</div>
+    <div class="stocks__category">{{ st?.category }}</div>
+    <div class="stocks__category">{{ st?.price }}</div>
+    <!-- purchase -->
+    <div class="purchase">
+      <input class="purchase__input" [value]="1" type="number" #quantity>
+      <button class="purchase__button" (click)="buy($event, st, quantity.value)">buy</button>
+    </div>
+  </div>
+</div>
